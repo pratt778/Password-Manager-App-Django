@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="h-100 p-3">
+    <form action="{% url "mylist" %}" method="get">
+        <input type="text" hidden value={{name}} name="name">
+        <button data-mdb-ripple-init type="submit" class="btn btn-warning me-3 mt-2 mx-2">
+           Add
+          </button>
+    </form>
+    <h1>Websites List</h1>
+    <section>
+        <div class="" style="margin-top: 1rem;">
+            <section class="" style="display: flex;gap:1rem;">
+                {% for n in info %}
+              <div class="card" style="width: max-content;">
+                <div class="card-body">
+                  <blockquote class="blockquote blockquote-custom bg-white px-3 pt-4">
+                    <h3>
+                        {{n.appname}}
+
+                    </h3>
+                    </p>
+                    <p class="mb-0 mt-2 font-italic ">
+                       App Link: <span class="text-primary">{{n.applink}}</span>
+                    </p>
+                    <p class="mb-0 mt-2 font-italic">
+                        Email: <span class="text-danger">{{n.email}}</span>
+                    </p>
+                    <p class="mb-0 mt-2 font-italic">
+                        Password: <span class="text-danger">{{n.password}}</span>
+                    </p>
+                    
+                      <cite title="author" class="">User: <strong>{{n.user}}</strong></cite>
+                   
+                  </blockquote>
+                </div>
+              </div>
+              {% endfor %}
+            </section>
+          </div>
+    </section>
+</main>
+
+{% endblock content %}
+

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="h-100 bg-secondary">
+    <h1 align="center">Manage password and email</h1>
+    <form class="px-3 w-50 d-flex flex-column gap-3" action="" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="exampleInputEmail1">App Name:</label>
+          <input type="text" name="aname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="App Name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">App link:</label>
+          <input type="text" name="lname" class="form-control" id="exampleInputPassword1" placeholder="App link">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Email address</label>
+          <input type="email" name="email" required class="form-control" id="exampleInputPassword1" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</main>
+
+{% endblock content %}
+

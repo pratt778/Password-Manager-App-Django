@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend><h2>blog form</h2></legend>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form}}
+            <button>Add Blog</button>
+        </form>
+    </fieldset>
+    <main>
+        {% for post in mypost %}
+        <h2>{{post.postname}}</h2>
+        <p>{{post.postbody}}</p>
+        <p>{{post.slug}}</p>
+        <span>{{post.date}} by-{{post.author}}</span>
+        {% endfor %}
+    </main>
+        
+</body>
+</html>
